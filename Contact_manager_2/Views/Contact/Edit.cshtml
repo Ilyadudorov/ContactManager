@@ -1,0 +1,46 @@
+﻿@model Contact_manager_2.Models.Contact
+
+<form asp-antiforgery="true" method="post" asp-controller="Contact" asp-action="Edit">
+    <div class="validation" asp-validation-summary="ModelOnly"></div>
+    <table>
+        <tr>
+            <td>Имя: </td>
+            <td><input asp-for="First_Name" type="text" class="form-control" /></td>
+            <td><span asp-validation-for="First_Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Фамилия: </td>
+            <td><input asp-for="Last_Name" type="text" class="form-control" /></td>
+            <td><span asp-validation-for="Last_Name" class="text-danger"></span></td>
+
+        </tr>
+        <tr>
+            <td>Отчество: </td>
+            <td><input asp-for="Middle_Name" type="text" class="form-control" /></td>
+            <td><span asp-validation-for="Middle_Name" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Дата рождения: </td>
+            <td><input asp-for="Birthday" type="date" class="form-control" /></td>
+            <td><span asp-validation-for="Birthday" class="text-danger"></span></td>
+        </tr>
+        <tr>
+            <td>Должность: </td>
+            <td><input asp-for="Position" type="text" class="form-control" /></td>
+            <td><span asp-validation-for="Position" class="text-danger"></span></td>
+        </tr>
+    </table>
+    <div class="form-group row">
+        <div class="col-8 offset-1 row">
+            <div class="col">
+                <input type="submit" class="btn btn-info w-100" value="Обновить" />
+            </div>
+            <div class="col">
+                <a asp-controller="Contact" asp-action="Index" class="btn btn-primary">Назад</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
