@@ -79,23 +79,3 @@ namespace ContactManager.Controllers
 
     }
 }
-
-
-//if (!ModelState.IsValid)
-//{
-//    if (string.IsNullOrEmpty(contact.First_Name))
-//    {
-//        ModelState.AddModelError("First_Name", "Некорректное имя");
-//    }
-//}
-//else if (contact.First_Name.Length < 2)
-//{
-//    ModelState.AddModelError("First_Name", "Недопустимая длина строки");
-//}
-//else
-//{
-//    _db.Contacts.Add(contact);
-//    await _db.SaveChangesAsync();
-//    return View("Index");
-//}
-//return View(contact);
